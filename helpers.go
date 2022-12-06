@@ -707,6 +707,17 @@ func NewInlineKeyboardButtonLoginURL(text string, loginURL LoginURL) InlineKeybo
 	}
 }
 
+// NewInlineKeyboardButtonWebApp creates an inline keyboard button with text
+// which goes to a WebApp.
+func NewInlineKeyboardButtonWebApp(text, url string) InlineKeyboardButton {
+	button := InlineKeyboardButton{
+		Text: text,
+		WebApp:  &WebApp{},
+	}
+	button.WebApp.Url = url
+	return button
+}
+
 // NewInlineKeyboardButtonURL creates an inline keyboard button with text
 // which goes to a URL.
 func NewInlineKeyboardButtonURL(text, url string) InlineKeyboardButton {
